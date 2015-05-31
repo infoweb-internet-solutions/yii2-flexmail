@@ -33,7 +33,7 @@ class Service
      * @param   stdClass $parent    The object to convert it to
      * @return  stdClass            The converted array
      */
-    protected function parseArray(array $arr, stdClass $parent = null)
+    protected function parseArray(array $arr, \stdClass $parent = null)
     {   
         if ($parent === null) {
             $parent = $this;
@@ -41,7 +41,7 @@ class Service
 
         foreach ($arr as $key => $val) {
             if (is_array($val) AND $key != "custom" AND substr($key, -3) != "Ids") {
-                $parent->$key = $this->parseArray($val, new stdClass);
+                $parent->$key = $this->parseArray($val, new \stdClass);
             } else {
                 $parent->$key = $val;
             }
