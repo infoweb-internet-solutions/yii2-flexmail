@@ -11,8 +11,8 @@ use yii\widgets\ActiveForm;
     'method' => 'post',
 ]); ?>
 
-<?= Html::hiddenInput('public-key', $publicKey) ?>
-<?php foreach ($mailingLists as $mailingList): ?>
+<?= Html::hiddenInput('public-key', $publicKeys[Yii::$app->language]) ?>
+<?php foreach ($mailingLists[Yii::$app->language] as $mailingList): ?>
 <?= Html::hiddenInput('mid[]', $mailingList) ?>
 <?php endforeach; ?>
 

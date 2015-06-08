@@ -8,7 +8,7 @@ use infoweb\news\models\News as NewsItem;
 class FlexmailSubscribe extends Widget
 {
     public $template = '_fields';
-    public $publicKey = '';
+    public $publicKeys = '';
     public $mailingLists = [];
 
     public function init()
@@ -20,7 +20,7 @@ class FlexmailSubscribe extends Widget
     {
 
         return $this->render('subscribe', [
-            'publicKey' => $this->publicKey,
+            'publicKeys' => $this->publicKeys,
             'mailingLists' => $this->mailingLists,
             'template' => $this->template,
         ]);
