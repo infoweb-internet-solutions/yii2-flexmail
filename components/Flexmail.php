@@ -85,11 +85,6 @@ class Flexmail extends \yii\base\Component
         
         // execute the call
         $response = $this->soapClient->__soapCall($service, array($request));
-
-        // check if we have get an error code, in which case we throw an exeception
-        if ($response->errorCode != 0 || $response->errorCode === "") {
-            throw new \Exception($response->errorMessage, $response->errorCode);
-        }
         
         // return the response
         return $response;
