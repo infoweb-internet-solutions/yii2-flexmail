@@ -27,6 +27,9 @@
 		"psr-4": {
             "infoweb\\flexmail\\": ""
         }
-	}
+	},
+	"extra": {
+        "bootstrap": "infoweb\\flexmail\\Bootstrap"
+    }
 }
         
