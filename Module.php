@@ -10,13 +10,13 @@ class Module extends \yii\base\Module
      * The Flexmail API user id
      * @var int
      */
-    public $userId;
+    public $userId = null;
     
     /**
      * The Flexmail API user token
      * @var string
      */
-    public $usertoken;
+    public $userToken = null;
     
     public function init()
     {
