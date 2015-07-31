@@ -4,7 +4,7 @@ use yii\widgets\ActiveForm;
 ?>
 
 <?php $form = ActiveForm::begin([
-    'action' => '//www.flexmail.eu/subscribe',
+    'action' => 'https://www.flexmail.eu/subscribe',
     'options' => $options,
     'method' => 'post',
 ]); ?>

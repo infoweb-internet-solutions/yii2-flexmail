@@ -16,7 +16,8 @@ class FlexmailSubscribe extends Widget
     {
         parent::init();
 
-        $options['target'] = 'iframe_flxml_submit';
+        $this->options['target'] = 'iframe_flxml_submit';
+
     }
     
     public function run()
