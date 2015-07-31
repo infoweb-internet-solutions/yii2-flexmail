@@ -10,10 +10,13 @@ class FlexmailSubscribe extends Widget
     public $template = '_fields';
     public $publicKeys = '';
     public $mailingLists = [];
+    public $options = [];
 
     public function init()
     {
         parent::init();
+
+        $options['target'] = 'iframe_flxml_submit';
     }
     
     public function run()
@@ -23,6 +26,7 @@ class FlexmailSubscribe extends Widget
             'publicKeys' => $this->publicKeys,
             'mailingLists' => $this->mailingLists,
             'template' => $this->template,
+            'options' => $this->options,
         ]);
     }
 }

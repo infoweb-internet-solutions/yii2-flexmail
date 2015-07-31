@@ -5,9 +5,7 @@ use yii\widgets\ActiveForm;
 
 <?php $form = ActiveForm::begin([
     'action' => '//www.flexmail.eu/subscribe',
-    'options' => [
-        'target' => 'iframe_flxml_submit',
-    ],
+    'options' => $options,
     'method' => 'post',
 ]); ?>
 
