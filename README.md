@@ -22,15 +22,27 @@ to the require section of your `composer.json` file.
 
 Usage
 --------------------------
-Register the component in `common/config/main.php`
+Register the module in `common/config/main.php`
 ```php
-'components' => [
+'modules' => [
     ...
     'flexmail' => [
-        'class' => 'infoweb\flexmail\components\Flexmail',
+        'class' => 'infoweb\flexmail\Module',
         'userId' => 'xxxxxx',
         'userToken' => 'xxxxx-xxxxx-xxxxx-xxxxx-xxxxxxxxxx'
     ],
     ...
 
+```
+This will automatically register the `infoweb\flexmail\components\Flexmail` component that can be used to communicate with your **Flexmail** account. Below is an example of how to create a contact in **Flexmail** by using the **Contact** service:
+```php
+Yii::$app->flexmail->service('Contact')->create([
+    'mailingListId'     => xxxxxx,
+    'emailAddressType'  => [
+        'emailAddress'  => 'example@email.com',
+        'name'          => 'John',
+        'surname'       => 'Doe',
+        'company'       => 'Infoweb'
+    ]
+]);
 ```
