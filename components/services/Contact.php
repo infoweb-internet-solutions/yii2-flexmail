@@ -56,8 +56,8 @@ class Contact extends Service
     {
         $request = self::parseArray($parameters);
 
-        $response = $test = Yii::$app->flexmail->execute("CreateEmailAddress", $request);
-        return self::stripHeader($response);
+        $response = Yii::$app->flexmail->execute("CreateEmailAddress", $request);
+        return $response;
     }
 
     /**
@@ -114,7 +114,7 @@ class Contact extends Service
         $request = self::parseArray($parameters);
 
         $response = Yii::$app->flexmail->execute("UpdateEmailAddress", $request);
-        return self::stripHeader($response);
+        return $response;
     }
 
     /**
@@ -139,7 +139,7 @@ class Contact extends Service
         $request = self::parseArray($parameters);
 
         $response = Yii::$app->flexmail->execute("DeleteEmailAddress", $request);
-        return self::stripHeader($response);
+        return $response;
     }
 
     /**
@@ -202,7 +202,7 @@ class Contact extends Service
         }
 
         $response = Yii::$app->flexmail->execute("GetEmailAddresses", $request);
-        return self::stripHeader($response);
+        return $response;
     }
 
     /**
@@ -275,7 +275,7 @@ class Contact extends Service
         }
 
         $response = Yii::$app->flexmail->execute("ImportEmailAddresses", $request);
-        return self::stripHeader($response);
+        return $response;
 
     }
 
@@ -328,6 +328,6 @@ class Contact extends Service
         $request = self::parseArray($parameters);
 
         $response = Yii::$app->flexmail->execute("GetEmailAddressHistory", $request);
-        return self::stripHeader($response);
+        return $response;
     }
 }
