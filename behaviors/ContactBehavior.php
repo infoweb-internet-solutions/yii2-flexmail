@@ -118,7 +118,6 @@ class ContactBehavior extends Behavior
 
         // Creation failed
         if (!in_array($contact->errorCode, [0, 225])) {
-            mail('fabio@infoweb.be', __FILE__.' => '.__LINE__, var_export($contact,true));
             throw new \Exception('Flexmail contact not created');
         }
 
